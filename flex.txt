@@ -1,0 +1,98 @@
+flex可以理解成一个弹性的盒子
+	只要容器设置了display：flex，盒子内容就会全部类似于float一样，并且盒子内元素的display:inline-block;
+	容器我们叫flex container；里面的元素叫flex item
+	
+	容器（flex container）的属性：
+		flex-direction属性决定主轴的方向（即项目的排列方向）。
+			值：
+			row（默认值）主轴为水平方向，起点在左端。
+			row-reverse 主轴为水平方向，起点在右端。
+			column 主轴为垂直方向，起点在上沿。
+			column-reverse 主轴为垂直方向，起点在下沿。
+		
+		flex-wrap属性定义，如果一条轴线排不下，如何换行
+			值:
+			nowrap（默认值） 不换行
+			wrap 换行，第一行在上方
+			wrap-reverse 换行 ，第一行在下面
+			
+		justify-content 属性定义属性定义了项目在主轴上的对齐方式。
+			值：
+			flex-start（默认值） 左对齐
+			flex-end 右对齐
+			center 居中对齐
+			space-between （空间-之间）把剩余的空间平均放到元素之间。第一个和最后一个顶格。
+			space-around(空间-周围) 把剩余的空间，放到元素两侧。
+			
+		align-items
+			值：
+			flex-start 容器里面的元素从顶部排列
+			flex-end 容器里面的元素从底部排列
+			center 垂直居中
+			stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+			
+		align-center （如果容器里面元素只有一行，改属性不起作用）
+			值：跟justifu的值差不多
+			flex-start：与交叉轴的起点对齐。
+			flex-end：与交叉轴的终点对齐。
+			center：与交叉轴的中点对齐。
+			space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+			space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+			stretch（默认值）：轴线占满整个交叉轴。
+			
+	项目（item）里的属性
+			值：
+			order，可以控制元素在容器内的排列顺序，数字越小，越靠前，这个书签出来双飞翼布局就死了 
+			属性定义项目在浏览器的排列顺序和html怎么写无关。数值越小，排列越靠前，默认为0。
+			在也不用去搞什么负margin了 。
+			代码如下 
+			<!DOCTYPE html>
+			<html>
+				<head>
+				  <meta charset="utf-8">
+				  <meta name="viewport" content="width=device-width">
+				  <title>JS Bin</title>
+				  <style>
+				.pratent{
+				  display:flex;
+				  background-color:green;
+				  height:600px;
+				}
+
+				.child1{
+				   order:1;
+				  width:100px;
+				  height:100px;
+				  background-color:red;
+				}
+
+				.child2{
+				  order:2;
+				  width:100px;
+				  height:100px;
+				  background-color:yellow;
+				}
+
+				.child3{
+				  width:100px;
+				  height:100px;
+				  background-color:white;
+				   order:2;
+				}
+
+				  </style>
+				</head>
+				<body>
+					<div class="pratent">
+					   <div class="child2">main</div>
+					   <div class="child1">left</div>
+					   <div class="child3">right</div>
+					</div>
+				</body>
+			</html>
+			
+			flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+			 flex-grow要设就里面的元素一起设置 
+			 
+		flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+		

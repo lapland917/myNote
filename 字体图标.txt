@@ -1,0 +1,39 @@
+	浏览器怎么读取font-family的样式？
+	浏览器解析HTML文档，解析到文本的时候，把所有“字” 转换成 unicode码 ，然后unicode码就去font-family 设置的字体库文件里面找到字体的样式，每个字体库文件里面，都有一个unicode码对应的“一副画”这幅画就是字体的样子，去找对应的样式，然后呈现出来。
+	
+	字体图标
+	就是unicode对应的“一幅画”真的是一幅画了
+	html  &#x + unicode码 = “字”
+	css  / + unicode = “字”
+	
+	线上的字体库的流程和原理
+	他们先定义了一个 font-family 比如叫"iconfont
+	每个icon下面的英文，对应的是一个unicode码
+	<span class"iconfont rain"></>  第一个class对应的一个它们定义好的字体库 第二个class对应的是unicode码
+	
+	实现icon的5种方法
+	1.image
+	  设置imgae的大小
+	  设置image的 vertical-align：top; 
+	  缺点：请求太多
+	2.css sprites CSS雪碧图
+	   1.把icon的图全部放到一张透明的图片里面。
+	   2.background-position 跳转看背景图的起始位置
+	   缺点：没有办法缩放 不好修改
+	3.icon font
+	  a.制作一个字体库
+		a.现成的
+		b.ackground-position设计师用AI软件，画出图标，然后保存成svg格式，然后放到iconfont内转成图标+unicode码的形式
+	  b.声明一个font-family:'字体库';
+		本地链接：
+		   下载到本地有4个文件加1个css，保存到font文件夹
+		    网上链接：
+	  c.使用font-family
+		html 标签内写出unicode码
+		css  ::before'unicode'
+	 4.CSS icon
+		可以开始装逼了
+	 5.SVG
+		a.img src='.svg'
+	    b.css精灵图 svg
+	  

@@ -1,0 +1,46 @@
+CSS杂谈
+
+  normal flow(文档流) 元素自然的排列方式
+
+1.内联元素 span（无语义的标签） 内联元素从左到右排列，宽度不够就换行。
+2.块级元素 div（无语义标签）从上到下排列
+3.inline block
+4.display：table
+5.display:list item
+6.display:flex
+
+宽高如何确定
+  内联元素 内联元素里面不能放块级元素
+    宽：是由里面的内容决定的。
+	高：line-height会改变内联元素所占空间的垂直高度 ，font-size决定 字体会把内联元素撑开。
+	padding 会改变宽度，不会改变高度。
+	margin 左右有效，上下无效
+  块级元素 
+	高和宽都可以设置
+	默认宽度，由它的爸爸决定的。公式：父级元素宽度-它的border。         
+	默认高度，由它里面文档流中元素的高度总合决定。
+  inline-block元素
+	宽： 1，可以设置width 2，内容决定 3，可以通过white-space控制是否换行white-space:nowrap 控制英文怎么换行word-break:break-all
+	高： line-height会改变内联元素所占空间的垂直高度 ，font-size决定 字体会把内联元素撑开。它里面文档流中元素的高度总合决定。
+	
+居中
+	写高度就是出bug的根源
+	在文档流中的元素
+	内联元素水平居中 在它爸爸的里面加个align:center
+	块级元素水平居中  
+	   1.固定宽 margin-left:auto;margin-right:auto;
+	   2.不固定宽 margin 0 100px;
+	内联元素垂直居中 line-height = height padding 20px 0;
+	   1.加padding	
+	
+	不在文档流中
+	  浮动元素不能居中，如果真的要居中，只能用另外一个div把浮动元素包起来，然后居中外层的div。
+	  
+布局
+float
+  背景层 border div 浮动层 文字层 绝对定位层
+IE：float
+非IE：flex
+
+
+面试技巧：具体话，分情况讨论

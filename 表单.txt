@@ -1,0 +1,37 @@
+ 用form包裹
+	form  
+		action 数据要发送的地址 
+		method 
+		  get “得到” 
+		  post “传递”
+		  target 在何处打开action
+	<input> 
+	  input传给后台服务器的值的形式是： key：value    key用name确定 value用value确定
+	    name 传过去的值对应的东西，如果不设置name 你传过去的数据服务器不知道是什么数据
+	    value 
+	    type里面的值
+			password 输入的值自动变成圆点
+			text 可以输入文本，不能换行
+			checkbox 其实就是个选项 必须手动去添加value值，不然他传过去的数据，没有任何意义。<checkbox value="football"> 
+			radio 单选
+			file 上传文件  当写file的时候input里面可以添加 accept 他可以定义你去选择文件时候的文件格式，如果设置成jpg，点开浏览，就只能看到jpg的文件
+			hidden 当type他会把里面的 name 和 value 的值传给服务器 ，用户是看不到的。
+			button 假装是个按钮
+			submit 提交
+			reset 重置
+		placeholder 这个东西设置的值，会在一开始显示，比如”请输入密码“
+	<select></select>d 下来菜单，如果是下拉菜单里面肯定要有个元素，如果没有怎么会有value值传给服务器呢 所以里面包裹这一个<option value="benjing"></option>
+		   格式
+	<select name="ctiy">
+		<option value="beijing">北京</opetion>
+		<option value="shanghai">上海</opetion>
+		<option value="guangzhou">广州</opetion>
+    </select>	
+		传给服务器的数据的形式是 key：value  
+	    selected 默认的选择项
+	<textare><<textare>  可以自由缩放的文本框
+		
+		<lable>包裹input 作用就是你点input前面的字体，就会聚焦到input的输入框
+		给input一个id ，然后<lable for="id"> 这样他们就关联起来了
+		
+		

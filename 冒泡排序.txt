@@ -1,0 +1,30 @@
+冒泡排序
+a{
+  '0':9;
+  '1':2;
+  '2':5;
+  '3':7;
+  '4':6;
+  'length':5;
+}
+
+轮数 <- 1
+
+if(轮数<a['length']){
+	 leftIndex=轮数-1;
+	 rightIndex=轮数;
+	  while(rightIndex<a['lenght']){
+		 if(a[leftIndex]<a[rightIndex]){
+		   //什么都做
+		 }else{
+			t <- a[rightIndex];
+			a[rightIndex]<-a[leftIndex];
+			a[leftIndex] <-t
+		 }
+		leftIndex <- leftIndex+1; 
+		rightIndex <- rightIndex + 1;
+	  }
+    轮数 <- 轮数 + 1；
+}else{
+  print a
+}

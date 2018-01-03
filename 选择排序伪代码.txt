@@ -1,0 +1,29 @@
+a <- {
+ '0':9;
+ '1':2;
+ '2':5;
+ '3':7;
+ '4':6;
+ 'length':5
+}
+
+ 轮数=1；
+ if(轮数<a['lenght']){
+	minIndex <- 轮数-1;
+	index <- minIndex+1;
+		while(index < a['lenght']){
+		  if(a[mimIndex]<a[index]){
+			//什么都不做
+		  }else{
+			minIndex <- index
+		  }
+		  index = index+1;
+		}
+		t <- a[轮数-1]
+		a[轮数-1] <- a[minIndex]
+		a[minIndex] <- t
+		轮数=轮数+1
+ }else{
+	print a;
+}
+	

@@ -1,0 +1,16 @@
+用例图，用户到页面可以做写什么
+   有js，要考虑数据结构。
+   
+   html标签 <kbd><kbd> keyboard 专门用来表示键盘上的东西。
+   
+   http-server -c -1 打开http服务器
+	
+   插入一个元素：
+   div1 = document.createElement('div')
+   给一个元素一个子元素
+   .appendChild() 
+   
+   Uncaught syntaxError 没有被处理的语法错误
+   unexpected taken 多了一个符号。
+   arr = {} 表示arr是hash，里面必须要写成key：value的格式，不然会报错，hash无法通过arr.length获取长度。
+   arr = [] 表示arr是个数字 ，不用写成key：value的格式，可以通过arr.length 获取数组长度。   

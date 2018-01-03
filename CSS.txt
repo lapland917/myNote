@@ -1,0 +1,172 @@
+CSS 
+	就是给HTML加一下颜色，定位置等等
+	CSS工作原理
+	得到HTML 解析HTML形成一个DOM树，在解析HTML的同时，解析到head的时候，从<link>标签内得到CSS，同时解析CSS，也形成CSS的DOM树，与HTML的DOM树结合，最终形成了我们看到的页面。
+	
+	CSS引用方式
+	1.外部样式表
+	  a.<lin rel="stylesheet" href="CSS文件的地址>
+	  b.@import; 引入样式 放在css文件里面
+	  格式@import url(css的地址里面)
+	
+	2.内部样式表
+	  a.<style></style>
+	  放在head里面
+	
+	CSS选择器
+	1.基本选择器
+	*（通配符） 选择器 通用元素选择器，匹配页面上的任何内容
+	class选择器 .[对应的class名] 找到元素
+	id 选择器 #[对应的ID] 找到元素
+	标签选择器 元素名字 找到元素
+	
+	2.组合选择器
+	EF 代表 1种基本选择器
+	E,F 表示同时选中E和F
+	E F (后代选择器) E下面的所有后代F
+	E>F (子元素选择器) E的直接子元素F 
+	E+F (直接相连选择器) 与E相连的F
+	E~F (相连选择器)与E相连的所有F
+	EF  同时拥有EF的元素
+	
+	3.属性选择器 （用标签内的属性选择）
+	不常用，了解就行 1.jpg
+	格式：元素[属性 = xxxx]
+	
+	4.伪类选择器 2.jpg
+	  理解成某些元素的另外一种状态。伪类选择器改变的不是元素的样式，它只是改变元素的状态。
+	  常见的伪类 a  注意顺序。
+	  visited（已被访问） link（为被访问） hover（划过） active（点击）
+	  按正常理解 已被访问 这个是要永久生效的，不然这条代码就没有意义了，而后面的link hover active 都是临时改变一下元素的状态，所以要跟在后面
+	  浏览器渲染文档是从上到下的，如果顺序不对的话，有些效果就会被最后一个效果所覆盖。
+	  伪类和伪元素的区别 
+	 如果要达到伪类的效果，可以通过添加一个实际的类来达到，而伪元素的效果则需要通过添加一个实际的元素才能达到，这也是为什么他们一个称为伪类，一个称为伪元素的原因。
+	 理解，伪类和伪元素的区别在于，要达到一个样式
+	    伪类  如果不用伪类要达到伪类的效果，只需要给元素添加一个class就可以实现，文档树内，并没有多出其他元素
+		伪元素 如果不用伪元素要达到伪元素的效果，我们要增加一个元素并且给元素一个class ，文档树内，多出了元素
+		所以伪类和伪元素的区别在于有没有传教一个文档树之外的元素
+	  
+	5.选择器的优先级
+	 
+	 
+    -----------------------
+	CSS常见样式
+	  块级元素 占据一行
+	  div 和 p hr form ul ol等等
+	  行内元素 占据自身的宽高
+	  em strong span a br img button input 等等
+	  属性
+	  width 宽  
+	  height 高
+	  宽高设置，只对块级元素生效，对行内元素设置是无效的
+	  border 边框 
+	  三个属性 粗细 类型 颜色 transparent隐藏
+	  border-radius 圆角边框设置
+	  
+	  正常盒模型
+	  border 
+	  margin 
+	  外边距 行内元素 上下margin是不生效的
+	  padding
+      内边距  行内元素的padding是不生效的，它还是保持原来的高和宽，撑开的是颜色和边框
+	  高和宽 指的是 内容的高和宽 ，不算padding border 
+	  IE盒模型
+	  宽高加上了border+padding
+	  IE盒模型在某些情况下，是比较方便的
+	  CSS3新增了一个属性 box-sizing:border-box; 这样这个盒模型就是按IE盒模型的计算方法来计算盒子的高和宽的
+	  默认的时候box-sizing:center-box;
+	  
+	  display
+	  不管什么元素 默认的display都是inline的，div，p都是inline 它们之所以变成在浏览器里面变成block ，是因为浏览器给他们加了默认的样式
+	  display 是不继承的
+	  
+	  字体
+		font-size 字体大小
+		font-family 字体的样式  font-family “微软雅黑”,"宋体",“黑体”; escape('')查看unicode编码
+		font-weight 文字粗细
+		line-height 一个文字占据的垂直空间（可用于居中）
+	  
+	  文本
+		text-align 文本的对齐方式 left center right 
+		justify 并不是让文本两端对齐，而是每一行两端之间“空白”。 对在块级元素上，对块级元素内的行内元素生效
+		text-indent 第一行缩进距离
+		text-decoration none（没有效果）underlin（添加下划线） line-through(添加上划线) overline（添加删除线）
+		color 文字的颜色 ,一般用16进制表示，所有的颜色都是用R（红）G（绿）B（蓝）组成，所以可以用	rgb（111，111，111）
+		rgba（111，111，111，0.8）最后的数字，指的是透明度。
+		text-transform  none uppercase（把小写的字母改成大写）lowercase（全部改成小写）capitalize（把首字母变成大写）
+		word-spacing 改变字（单词）之间的标准间隔
+		letter-spacing 改变字母之间的间隔
+	 
+	  其他:
+	  
+	  单行文本溢出
+		white-space：nowrap; 文本不折行
+		overflow:hidden; 把超出的部分隐藏
+		text-overflow:ellipsis; 当文本被设置了vierflow时候，变成"...."
+	  
+	  word-break:break-all 在一个div里面显示，不会溢出，溢出的地方就折行；
+	  a链接的样式
+	  要单独添加才能覆盖。
+	  
+	  如何去掉列表前面的点
+		list-style-type:none;
+	  
+	  隐藏和透明
+		opacity 0 透明的  是把整块元素都透明，包括里面的内容 占着位置
+		visibility（能见度）：hidden；占着位置
+		display：none；消失，不占位置
+		background-color：rgba（0，0，123，0.8） 只对背景颜色进行透明，不影响里面的内容
+	  
+	  加阴影
+		box-shadow：10px 10px 10px red;
+	
+	  旋转
+		transform:rotate(-90deg)
+	  
+	  背景
+	  background
+	    -attachment 
+		-color 设置背景颜色
+		-image 设置背景图像
+		-position 设置背景图像的起始位置
+			x y x% y% 
+			垂直方向 top bottom center
+			水平方向 left right center
+			左边的值控制一个元素的X轴 右边的元素控制Y轴
+			元素相当于一个窗口，背景图片相当于窗口外的景色。
+		配合CSS Sprite使用，减少浏览器向服务器的请求，增加网页网页加载速度
+		
+		-repeat 设置背景是否重复，以及怎么重复
+			no repeat 不重复
+			repeat-x 水平方向上有背景
+			repeat-y 垂直方向上有背景
+			repeat 重复
+		-size 设置背景的大小
+			100px 100px 
+			cover 垂直方向撑满 拉升的感觉
+			contain 图片等比缩放，是背景刚好可以放进容器。
+		
+		inline-bolck 既有inline的特性，又有bolck的特性（可以设置宽高）
+		  两个元素之间会有缝隙，那是因为他只之间存在一个回车，因为写代码的时候要换行
+		  解决办法：把这两个行内元素放到一个div内 ，然后设置div的font-size：0 ，这样空白字符就没有，也就没有缝隙了，然后再设置行内元素的font-size就行了。
+		  
+		  行内元素的对齐方式，默认是以里面内容及其对其的（文字的底部）vertical-align：可以设置以后边框的上下对齐
+		  
+		line-height
+		设置 当行 文本的行高 ，占据垂直的位置；
+		单位: 数字 px % 数字是单行文本的两倍 px 正常理解  %是相对于父容器文字文字的大小。
+		line-height=height（父元素）达到垂直居中
+		
+		
+		
+		
+		
+	  
+	  
+	  
+	  
+	  
+	   
+	  
+	
+	  
